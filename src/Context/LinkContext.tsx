@@ -1,12 +1,5 @@
 import React, { createContext, useState, ReactNode } from "react";
-
-// Define the structure of a Link
-interface LinkType {
-  platform: string;
-  icon: JSX.Element;
-  link: string;
-  color: string;
-}
+import { LinkType } from "../Types/types";
 
 // Define the context structure
 interface LinkContextType {
