@@ -4,3 +4,13 @@ export type LinkType = {
   link: string;
   color: string;
 };
+
+export type pageType = "LinkPage" | "ProfilePage";
+
+export type ProfileType = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  profilePicture: File | null;
+  profilePicturePreview: string;
+};
