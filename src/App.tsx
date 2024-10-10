@@ -6,20 +6,27 @@ import { LinkProvider } from "./Context/LinkContext";
 import ProfilePage from "./pages/ProfilePage";
 import { pageType } from "./Types/types";
 import { ProfileProvider } from "./Context/ProfileProvider";
+import PreviewPage from "./pages/PreviewPage";
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<pageType>("LinkPage");
   return (
     <LinkProvider>
       <ProfileProvider>
-        <div>
+        <div className="relative">
           <Navigation
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
           />
 
-          <div className="my-4 px-4">
-            {currentPage === "LinkPage" ? <LinkPage /> : <ProfilePage />}
+          <div className="my-4 px-4 ">
+            {currentPage === "LinkPage" ? (
+              <LinkPage />
+            ) : currentPage === "PreviewPage" ? (
+              <PreviewPage />
+            ) : (
+              <ProfilePage />
+            )}
           </div>
         </div>
       </ProfileProvider>
