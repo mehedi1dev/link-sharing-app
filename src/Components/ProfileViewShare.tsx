@@ -26,7 +26,7 @@ const ProfileViewShare = () => {
     <div className="flex min-h-fit items-center justify-center">
       <div className="relative w-[300px] min-h-[530px] bg-white rounded-[40px] shadow-xl border-gray-300 border-2">
         <div className="h-full w-full pt-12 px-6 overflow-y-auto">
-          <div className="flex flex-col items-center space-y-4 mb-8">
+          <div className="flex flex-col  items-center space-y-2 mb-8">
             {profileDetails.profilePicture ? (
               <img
                 src={profileDetails.profilePicturePreview}
@@ -37,7 +37,7 @@ const ProfileViewShare = () => {
               <div className="h-28 w-28 rounded-full bg-gray-200" />
             )}
             {profileDetails.firstName ? (
-              <p>
+              <p className="font-bold">
                 {profileDetails.firstName} {profileDetails.lastName}
               </p>
             ) : (

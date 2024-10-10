@@ -27,7 +27,7 @@ const ProfileView = () => {
       <div className="relative w-[300px] h-[580px] bg-white rounded-[40px] shadow-xl overflow-hidden border-gray-300 border-2">
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-6 w-40 bg-white border-2 border-t-0 rounded-b-3xl"></div>
         <div className="h-full w-full pt-12 px-6 overflow-y-auto">
-          <div className="flex flex-col items-center space-y-4 mb-8">
+          <div className="flex flex-col items-center space-y-2 mb-8">
             {profileDetails.profilePicture ? (
               <img
                 src={profileDetails.profilePicturePreview}
@@ -38,7 +38,7 @@ const ProfileView = () => {
               <div className="h-28 w-28 rounded-full bg-gray-200" />
             )}
             {profileDetails.firstName ? (
-              <p>
+              <p className="font-bold">
                 {profileDetails.firstName} {profileDetails.lastName}
               </p>
             ) : (
