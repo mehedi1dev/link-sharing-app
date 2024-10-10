@@ -5,7 +5,7 @@ export type LinkType = {
   color: string;
 };
 
-export type pageType = "LinkPage" | "ProfilePage";
+export type pageType = "LinkPage" | "ProfilePage" | "PreviewPage";
 
 export type ProfileType = {
   firstName: string;
