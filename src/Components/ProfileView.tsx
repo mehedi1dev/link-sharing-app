@@ -23,56 +23,54 @@ const ProfileView = () => {
   }
   const { profileDetails } = profileContext; // Ensure the context is defined
   return (
-    <div className="">
-      <div className="flex min-h-screen items-center justify-center p-4">
-        <div className="relative w-[300px] h-[580px] bg-white rounded-[40px] shadow-xl overflow-hidden border-gray-300 border-2">
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-6 w-40 bg-white border-2 border-t-0 rounded-b-3xl"></div>
-          <div className="h-full w-full pt-12 px-6 overflow-y-auto">
-            <div className="flex flex-col items-center space-y-4 mb-8">
-              {profileDetails.profilePicture ? (
-                <img
-                  src={profileDetails.profilePicturePreview}
-                  alt="Profile Preview"
-                  className="object-cover h-28 w-28 rounded-full border border-indigo-600"
-                />
-              ) : (
-                <div className="h-28 w-28 rounded-full bg-gray-200" />
-              )}
-              {profileDetails.firstName ? (
-                <p>
-                  {profileDetails.firstName} {profileDetails.lastName}
-                </p>
-              ) : (
-                <div className="h-4 w-32 rounded bg-gray-200" />
-              )}
-              {profileDetails.email ? (
-                <p>{profileDetails.email}</p>
-              ) : (
-                <div className="h-3 w-40 rounded bg-gray-200" />
-              )}
-            </div>
-            <div className="space-y-4">
-              {links.length > 0 ? (
-                links.map((link) => {
-                  return (
-                    <a
-                      className={`w-full py-3 px-4 text-white rounded-lg flex items-center justify-between`}
-                      style={{ backgroundColor: link.color }}
-                      href={formatLink(link.link)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span className="text-sm flex items-center gap-2">
-                        {link.icon} {link.platform}
-                      </span>
-                      <FaArrowRight size={14} />
-                    </a>
-                  );
-                })
-              ) : (
-                <div className="h-10 w-full m-auto rounded bg-gray-200" />
-              )}
-            </div>
+    <div className="flex min-h-screen items-center justify-center p-4 sticky top-2">
+      <div className="relative w-[300px] h-[580px] bg-white rounded-[40px] shadow-xl overflow-hidden border-gray-300 border-2">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-6 w-40 bg-white border-2 border-t-0 rounded-b-3xl"></div>
+        <div className="h-full w-full pt-12 px-6 overflow-y-auto">
+          <div className="flex flex-col items-center space-y-4 mb-8">
+            {profileDetails.profilePicture ? (
+              <img
+                src={profileDetails.profilePicturePreview}
+                alt="Profile Preview"
+                className="object-cover h-28 w-28 rounded-full border border-indigo-600"
+              />
+            ) : (
+              <div className="h-28 w-28 rounded-full bg-gray-200" />
+            )}
+            {profileDetails.firstName ? (
+              <p>
+                {profileDetails.firstName} {profileDetails.lastName}
+              </p>
+            ) : (
+              <div className="h-4 w-32 rounded bg-gray-200" />
+            )}
+            {profileDetails.email ? (
+              <p>{profileDetails.email}</p>
+            ) : (
+              <div className="h-3 w-40 rounded bg-gray-200" />
+            )}
+          </div>
+          <div className="space-y-4">
+            {links.length > 0 ? (
+              links.map((link) => {
+                return (
+                  <a
+                    className={`w-full py-3 px-4 text-white rounded-lg flex items-center justify-between`}
+                    style={{ backgroundColor: link.color }}
+                    href={formatLink(link.link)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="text-sm flex items-center gap-2">
+                      {link.icon} {link.platform}
+                    </span>
+                    <FaArrowRight size={14} />
+                  </a>
+                );
+              })
+            ) : (
+              <div className="h-10 w-full m-auto rounded bg-gray-200" />
+            )}
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ const Navigation: React.FC<navigationTypes> = ({
   setCurrentPage,
 }) => {
   return (
-    <div className="md:p-4 md:pb-0">
+    <div className="md:p-4 md:pb-0 z-50 sticky -top-4">
       <div className="bg-white p-2 rounded-lg flex justify-between items-center">
         {currentPage !== "PreviewPage" ? (
           <>
