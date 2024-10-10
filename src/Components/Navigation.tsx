@@ -4,6 +4,7 @@ import { LuUserCircle2 } from "react-icons/lu";
 import { pageType } from "../Types/types";
 import { IoEyeOutline, IoShareSocialSharp } from "react-icons/io5";
 import { RiLinksFill } from "react-icons/ri";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 type navigationTypes = {
   currentPage: pageType;
@@ -73,7 +74,7 @@ const Navigation: React.FC<navigationTypes> = ({
                 onClick={() => setCurrentPage("LinkPage")}
               >
                 <span className=" md:hidden">
-                  <IoEyeOutline />
+                  <IoMdArrowRoundBack />
                 </span>
                 <span className="hidden md:block">Back to Editor</span>
               </button>
