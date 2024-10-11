@@ -5,6 +5,7 @@ import { pageType } from "../Types/types";
 import { IoEyeOutline, IoShareSocialSharp } from "react-icons/io5";
 import { RiLinksFill } from "react-icons/ri";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { toast } from "sonner";
 
 type navigationTypes = {
   currentPage: pageType;
@@ -82,7 +83,11 @@ const Navigation: React.FC<navigationTypes> = ({
             <div>
               <button
                 className="px-4 py-2 flex items-center gap-2 bg-indigo-700 border border-indigo-700 text-white font-bold rounded-lg hover:bg-indigo-900"
-                onClick={() => alert("Sorry no backend integrated")}
+                onClick={() => {
+                  toast.warning("Sorry! No backend integrated.", {
+                    id: "id",
+                  });
+                }}
               >
                 <span className=" md:hidden">
                   <IoShareSocialSharp />

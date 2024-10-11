@@ -6,6 +6,7 @@ import { LinkType } from "../Types/types";
 import { MdDragHandle } from "react-icons/md";
 import CustomSelect from "./smallComponents/CustomSelect";
 import { HiOutlineLink } from "react-icons/hi";
+import { toast } from "sonner";
 
 // Define the options for the select dropdown
 const options = [
@@ -82,12 +83,14 @@ const LinkAdd = () => {
     );
 
     if (!allFieldsFilled) {
-      alert("Please fill out all fields before saving.");
+      toast.warning("Please fill out all fields before saving.", {
+        id: "id",
+      });
       return;
     }
 
     setLinks(linkCount);
-    console.log("Links saved to context:", linkCount);
+    toast.success("Successfully saved! 🎉", { id: "id" });
   };
 
   const handleDragStart = (
@@ -115,7 +118,7 @@ const LinkAdd = () => {
       <div className="p-4 md:p-8 relative">
         <h2 className="text-3xl font-bold mb-2">Customize your links</h2>
         <p className="text-gray-700 mb-8">
-          Add/Edit/remove links below and then share all your profiles with the
+          Add/Edit/Remove links below and then share all your profiles with the
           world!
         </p>
         <button

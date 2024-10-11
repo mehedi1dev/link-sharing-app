@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { ProfileContext } from "../Context/ProfileProvider";
+import { toast } from "sonner";
 
 const ProfileDetails: React.FC = () => {
   const profileContext = useContext(ProfileContext);
@@ -50,7 +51,9 @@ const ProfileDetails: React.FC = () => {
           image.onload = () => {
             // Validate dimensions
             if (image.width > 1024 || image.height > 1024) {
-              alert("Image dimensions must be below 1024x1024px.");
+              toast.warning("Image dimensions must be below 1024x1024px.", {
+                id: "id",
+              });
               return;
             }
 
@@ -67,7 +70,9 @@ const ProfileDetails: React.FC = () => {
   const handleSave = () => {
     // Validate required fields
     if (!firstName || !lastName) {
-      alert("Please fill out all required fields before saving.");
+      toast.warning("Please fill out all required fields before saving.", {
+        id: "id",
+      });
       return;
     }
 
@@ -82,7 +87,7 @@ const ProfileDetails: React.FC = () => {
 
     // Save data to context
     setProfileDetails(profileData);
-    console.log("Profile saved:", profileData);
+    toast.success("Successfully saved! 🎉", { id: "id" });
   };
 
   return (

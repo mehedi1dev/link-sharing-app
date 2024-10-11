@@ -7,6 +7,7 @@ import ProfilePage from "./pages/ProfilePage";
 import { pageType } from "./Types/types";
 import { ProfileProvider } from "./Context/ProfileProvider";
 import PreviewPage from "./pages/PreviewPage";
+import { Toaster } from "sonner";
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<pageType>("LinkPage");
@@ -14,6 +15,12 @@ const App: React.FC = () => {
     <LinkProvider>
       <ProfileProvider>
         <div className="relative">
+          <Toaster
+            richColors
+            expand={false}
+            position="top-center"
+            closeButton
+          />
           <Navigation
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
